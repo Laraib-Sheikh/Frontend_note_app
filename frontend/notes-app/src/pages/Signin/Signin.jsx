@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../../componets/Navbar/Navbar";
 
 const Signin = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <div>
             <Navbar />
+            <div className="flex justify-center items-center mt-10">
             <div className="bg-white p-6 rounded-lg shadow-md w-96">
                 <h2 className="text-2xl font-bold mb-4 text-center">Sign In</h2>
                 <form>
@@ -41,6 +42,8 @@ const Signin = () => {
                     </Link>
                 </p>
             </div>
+            </div>
+           
         </div>
     );
 };
