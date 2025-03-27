@@ -3,7 +3,7 @@ import { MdCreate, MdDelete } from 'react-icons/md'
 
 const NoteCard = ({title, date, content, tags, isPinned, onEdit, onDelete, onPinNote}) => {
   return(
-    <div className='border border-slate-400 bg-white p-4 rounded hover:shadow-2xl transition-shadow duration-500'>
+    <div className='border border-green-200 bg-white p-4 rounded hover:shadow-2xl transition-shadow duration-500'>
         <div className="flex items-center justify-between">
             <div>
                 <h6 className="text-sm font-medium">{title}</h6>
