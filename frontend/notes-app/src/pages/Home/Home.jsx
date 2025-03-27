@@ -48,7 +48,10 @@ style={{
 contentLabel=""
 className="mx-auto bg-white rounded-md w-[40%] max-h-3/4 mt-14 p-5 overflow-y-auto"
 >
-<AddEditNotes />
+<AddEditNotes onClose={() => {setOpenAddEditModel({isShown: false, type: "add", data: null})}}
+  type={openAddEditModel.type}
+  noteData={openAddEditModel.data}
+  />
 </Modal>
       
     </>

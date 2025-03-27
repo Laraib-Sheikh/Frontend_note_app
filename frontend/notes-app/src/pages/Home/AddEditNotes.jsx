@@ -1,7 +1,7 @@
 import { MdAdd, MdClose } from "react-icons/md";
 import { useState } from "react";
 
-const AddEditNotes = () => {
+const AddEditNotes = ({onClose, type, noteData}) => {
   const [inputValue, setInputValue] = useState("");
   const [title, setTitle] = useState("");
   const [tags, setTags] = useState([]);
@@ -18,6 +18,21 @@ const AddEditNotes = () => {
     }
   };
 
+  const editNote = async () => {
+    
+  }
+
+  const addNewNote = async () => {
+    
+  }
+
+  const handleAddNotes = () => {
+    if (type === "edit"){
+      editNote();
+    }else{
+      addNewNote();
+    }
+  }
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       addNewTag();
@@ -30,7 +45,13 @@ const AddEditNotes = () => {
   };
 
   return (
-    <div>
+    <div className="relative">
+      <button
+      className="w-10 h-10 rounded-full bg-slate-100 flex justify-center items-center absolute -right-3 -top-3 hover:bg-slate-500"
+      onClick={onClose}
+      >
+<MdClose className="text-xl text-slate-400"/>
+      </button>
       <div className="flex flex-col gap-2">
         <label className="text-xs text-slate-400">TITLE</label>
         <input
@@ -87,7 +108,7 @@ const AddEditNotes = () => {
           </div>
         </div>
       </div>
-      <button className="bg-blue-400 font-medium mt-5 p-3 w-full">ADD</button>
+      <button onClick={handleAddNotes} className="bg-blue-400 font-medium mt-5 p-3 w-full cursor-pointer">ADD</button>
     </div>
   );
 };
